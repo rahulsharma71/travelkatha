@@ -27,21 +27,20 @@ class MakeFilamentUser extends Command
      */
     public function handle()
     {
-        $firstName = $this->ask('First Name');
-        $lastName = $this->ask('Last Name');
+        $name = $this->ask('name');
         $email = $this->ask('Email Address');
         $password = $this->secret('Password');
-        $username = $this->ask('Username');
+      
 
         $role = $this->choice('Role', ['admin', 'user'], 0); // Default to 'admin'
 
         try {
             $user = User::create([
-                'first_name' => $firstName,
-                'last_name' => $lastName,
+                'name' => $name,
+              
                 'email' => $email,
                 'password' => Hash::make($password),
-                'username' => $username,
+                
 
                 'role' => $role,
             ]);
