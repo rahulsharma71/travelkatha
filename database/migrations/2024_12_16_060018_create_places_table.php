@@ -16,6 +16,8 @@ public function up()
         $table->string('name');
         $table->foreignId('city_id')->constrained('cities');
         $table->text('description');
+        $table->boolean('is_active')->default(true)->after('description');
+
         $table->timestamps();
     });
 }

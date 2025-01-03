@@ -85,10 +85,5 @@ return [
     */
 
     'livewire_loading_delay' => 'default',
-    'auth' => [
-    'guard' => 'web', // Or your application’s guard
-    'user' => \App\Models\User::class, // Ensure this points to your User model
-],
-
 
 ];
